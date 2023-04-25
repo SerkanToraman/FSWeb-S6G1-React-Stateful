@@ -35,7 +35,7 @@ const uzgunRuhHali = 'Oldukça üzgün :(';
 
 export default function RuhHalleri() {
   /* ADIM 1 */
-  const [ruhHali,setRuhHali] = useState(null);
+  const [ruhHali,setRuhHali] = useState(ilkRuhHali);
 	
 	
   const mutluEt = () => {
@@ -54,13 +54,13 @@ export default function RuhHalleri() {
   const stil = {
     fontSize: '1.5em',
     marginBottom: '0.3em',
-    color: ruhHali===mutluRuhHali ?'royalblue': 'crimson', /* ADIM 2 */
+    color: ruhHali===mutluRuhHali ? 'royalblue': 'crimson', /* ADIM 2 */
   };
 
   return (
     <div className='widget-moods container'>
       <h2>RuhHalleri</h2>
-	<div id='ruhHali' style={stil}>'Nasıl hissettiğimi bilmiyorum :-|'</div> {ruhHali}
+	<div id='ruhHali' style={stil}>{ruhHali}</div> 
       <div>
         <button id='mutluEt' onClick={mutluEt}>Mutlu Et</button>
         <button id='uz' onClick={uZ}>Üz</button>
